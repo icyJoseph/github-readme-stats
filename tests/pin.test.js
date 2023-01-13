@@ -8,7 +8,7 @@ import { renderError } from "../src/common/utils.js";
 
 const data_repo = {
   repository: {
-    username: "anuraghazra",
+    username: "icyJoseph",
     name: "convoychat",
     stargazers: {
       totalCount: 38000,
@@ -41,7 +41,7 @@ describe("Test /api/pin", () => {
   it("should test the request", async () => {
     const req = {
       query: {
-        username: "anuraghazra",
+        username: "icyJoseph",
         repo: "convoychat",
       },
     };
@@ -65,7 +65,7 @@ describe("Test /api/pin", () => {
   it("should get the query options", async () => {
     const req = {
       query: {
-        username: "anuraghazra",
+        username: "icyJoseph",
         repo: "convoychat",
         title_color: "fff",
         icon_color: "fff",
@@ -97,7 +97,7 @@ describe("Test /api/pin", () => {
   it("should render error card if user repo not found", async () => {
     const req = {
       query: {
-        username: "anuraghazra",
+        username: "icyJoseph",
         repo: "convoychat",
       },
     };
@@ -118,7 +118,7 @@ describe("Test /api/pin", () => {
   it("should render error card if org repo not found", async () => {
     const req = {
       query: {
-        username: "anuraghazra",
+        username: "icyJoseph",
         repo: "convoychat",
       },
     };

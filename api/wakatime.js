@@ -1,4 +1,5 @@
 import { renderWakatimeCard } from "../src/cards/wakatime-card.js";
+import { allowList } from "../src/common/blacklist.js";
 import {
   clampValue,
   CONSTANTS,
@@ -34,6 +35,10 @@ export default async (req, res) => {
   } = req.query;
 
   res.setHeader("Content-Type", "image/svg+xml");
+
+  if (!allowList.includes(username)) {
+    return res.send(renderError("Something went wrong"));
+  }
 
   if (locale && !isLocaleAvailable(locale)) {
     return res.send(renderError("Something went wrong", "Language not found"));
